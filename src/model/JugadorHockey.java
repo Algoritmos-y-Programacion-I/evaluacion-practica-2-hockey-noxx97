@@ -1,14 +1,16 @@
 package model;
 
-public class JugadorHockey extends Persona implements DesplazarseEnPistaConPalo {
+public class JugadorHockey extends Persona implements IDesplazarseEnPistaConPalo, PasarDisco {
     protected String nombre;
     protected int numero;
     protected Posicion posicion;
 
-    public JugadorHockey(String nombre, int edad, Posicion posicion) {
+
+    public JugadorHockey(String nombre, String edad, Posicion posicion) {
         super(nombre, edad);
         this.posicion = posicion;
     }
+
 
     public Posicion getPosicion() {
         return posicion;
@@ -26,4 +28,9 @@ public class JugadorHockey extends Persona implements DesplazarseEnPistaConPalo 
             return nombre + " es el portero y no se desplaza más allá de media pista.";
         }
     }
-}
+
+        @Override
+        public void pasarDiscoA(JugadorHockey jugador) {
+            System.out.println("Jugador " + this.numero + " se la pasa a Jugador " + jugador.numero);
+        }
+    }

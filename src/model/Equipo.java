@@ -6,6 +6,22 @@ public class Equipo {
 
     protected String nombreEquipo;
 
+    public Equipo(String nombreEquipo2, String jugadores2) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public String getNombreEquipo() {
+        return nombreEquipo;
+    }
+
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
+    }
+
+    public void setJugadores(JugadorHockey[] jugadores) {
+        this.jugadores = jugadores;
+    }
+
     private JugadorHockey[] jugadores = new JugadorHockey[CANTIDAD_JUGADORES];
 
     public void agregarJugador(JugadorHockey jugador, int posicion) {

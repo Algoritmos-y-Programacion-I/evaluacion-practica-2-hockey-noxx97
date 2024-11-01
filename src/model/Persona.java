@@ -1,10 +1,10 @@
 package model;
 
-public  Persona {
+public  abstract class Persona {
      String nombre;
-     int edad;
+     String edad;
 
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre, String edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
@@ -17,11 +17,11 @@ public  Persona {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 

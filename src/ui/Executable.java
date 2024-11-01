@@ -5,8 +5,8 @@ import model.Controller;
 
 public class Executable {
 
-    private Scanner escaner;
-    private Controller controladora;
+    private Scanner sc;
+    private Controller cont;
     private static boolean flag;
 
     /**
@@ -18,8 +18,8 @@ public class Executable {
      *       entrada y el controlador.
      */
     public Executable() {
-        escaner = new Scanner(System.in);
-        controladora = new Controller();
+        sc = new Scanner(System.in);
+        cont = new Controller();
     }
 
     /**
@@ -41,19 +41,19 @@ public class Executable {
 			System.out.println("Opciones:\n" + "1. Fixture \n" 
 					+ "2. Precargar informacion \n" + "3. Realizar partido entre 2 equipos \n" + "4. Salir del programa \n");
 
-			int option = escaner.nextInt();
+			int option = sc.nextInt();
 
-			escaner.nextLine();
+			sc.nextLine();
 
 			switch (option) {
-					case 1:
-
+					case 1: 
+                        //fixture();
 						break;
-					case 2:
-
+					case 2: 
+                        preloadInformation();
 						break;
 					case 3:
-
+                        realizarPartido();
 						break;
 					case 4:
 						flag = true;
@@ -81,6 +81,20 @@ public class Executable {
         Executable mainApp = new Executable();
         mainApp.run(flag);
 
+
+
     }
+
+    public void preloadInformation(){
+        cont.preloadInformation();
+        System.out.println("Objetos creados");
+        
+    }
+
+
+    public void realizarPartido () {
+        cont.simularJugadaGol();
+    }
+
 
 }
